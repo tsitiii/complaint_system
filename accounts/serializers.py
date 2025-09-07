@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import User
+from .models import User, GovernmentOrganization
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
@@ -28,3 +28,8 @@ class UserSerializer(serializers.ModelSerializer):
         instance.save()
         return instance
     
+
+class GovernmentOrganizationSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = GovernmentOrganization
+        fields = '__all__'
